@@ -135,19 +135,11 @@
     // 各ボタンにクリックイベントを追加
     document.getElementById('button1').addEventListener('click', function() {
       trackButtonClick('Button 1');
-      window.location.href = 'https://example.com/button1'; // ボタン1の遷移先URL
+      window.location.href = 'https://yutakikuchi.github.io'; // ボタン1の遷移先URL
     });
     document.getElementById('button2').addEventListener('click', function() {
       trackButtonClick('Button 2');
-      window.location.href = 'https://example.com/button2'; // ボタン2の遷移先URL
-    });
-    document.getElementById('button3').addEventListener('click', function() {
-      trackButtonClick('Button 3');
-      window.location.href = 'https://example.com/button3'; // ボタン3の遷移先URL
-    });
-    document.getElementById('button4').addEventListener('click', function() {
-      trackButtonClick('Button 4');
-      window.location.href = 'https://example.com/button4'; // ボタン4の遷移先URL
+      window.location.href = '?utm_source=click&utm_medium=origin&utm_campaign=test'; // ボタン2の遷移先URL
     });
   });
   </script>
