@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>Map Sample</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+<link rel="stylesheet" href="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.css" rel="stylesheet" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.umd.js"></script>
+<script src="https://cdn.maptiler.com/leaflet-maptilersdk/v1.0.0/leaflet-maptilersdk.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+<script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+<style>
+  #map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>
+</head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTQJQLCG');</script>
+  <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T0X3T3816X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T0X3T3816X', {
+      'cookie_domain': none
+    }
+  );
+</script>
+-->
+<body>
+<div id="map"></div>
+<script>
+  // api key ここはpeerto様の独自のkeyを取得/再設定する必要があります。
+  const key = 'K1hFJcCoCpvcCgSUYIFw';
+  const map = L.map('map').setView([35.18519647270888,139.01656143896062], 16); //starting position
+    L.tileLayer(`https://api.maptiler.com/maps/6d3892b3-c638-4fe7-a873-b72b2f297ae5/{z}/{x}/{y}.png?key=K1hFJcCoCpvcCgSUYIFw`,{ //style URL
+    tileSize: 512,
+    zoomOffset: -1,
+    minZoom: 1,
+    maxZoom: 25,
+    attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+    crossOrigin: true
+  }).addTo(map);
+
+  // ルーティングを示すものです。
+  // https://www.liedman.net/leaflet-routing-machine/api/
+  var routing = L.Routing.control({
+    waypoints: [
+      L.latLng(35.18519647270888,139.01656143896062),
+      L.latLng(35.19193048710584,139.02749898674654)
+    ]
+    ,lineOptions : {
+      styles : [
+        {color: 'black', opacity: 0.05, weight: 9},
+        {color: 'white', opacity: 0.8, weight: 6},
+        {color: 'red', opacity: 0.25, weight: 15}
+      ],
+    },
+  }).addTo(map);
+  routing.hide();
+
+  // heatmapの出力
+  // https://github.com/Leaflet/Leaflet.heat
+  var coordinates = [
+    [
+      35.18519647270888,
+      139.01656143896062
+    ],
+    [
+      35.187862086805474,
+      139.0157464844197
+    ],
+    [
+      35.18719569147875,
+      139.0191778719604
+    ],
+    [
+      35.18772179350663,
+      139.0238102451403
+    ],
+    [
+      35.19193048710584,
+      139.02749898674654
+    ]
+  ];
+  var heat = L.heatLayer(coordinates, {
+    radius: 40,
+    opacity: 1.0,
+    blur : 30,
+    gradient: {
+      0.0: 'green',
+      0.5: 'yellow',
+      1.0: 'red'
+    },
+    maxZoom: 16
+  }).addTo(map);;
+</script>
+</body>
+</html>
