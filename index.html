@@ -123,7 +123,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // ボタンクリックイベントのトラッキング
     function trackButtonClick(buttonName) {
       dataLayer.push({
         'event': 'buttonClick',
@@ -131,8 +130,6 @@
         'pageURL': window.location.href
       });
     }
-
-    // 各ボタンにクリックイベントを追加
     document.getElementById('button1').addEventListener('click', function() {
       trackButtonClick('Button 1');
       window.location.href = 'https://yutakikuchi.github.io'; // ボタン1の遷移先URL
@@ -143,6 +140,10 @@
     });
   });
   </script>
-
+  <script>
+    window.addEventListener('beforeunload', function(event) {
+      dataLayer.push({'event': 'pageView', 'pageURL': window.location.href});
+    });
+  </script>
 </body>
 </html>
