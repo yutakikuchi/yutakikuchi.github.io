@@ -1,66 +1,55 @@
 # Design QA
 
-- Source visual truth: `/Users/yuta/.codex/generated_images/019f70bf-4f07-71d1-bc3d-8723d413e37e/exec-360a1837-d2e8-41bc-85ad-1376a8288a0c.png`
-- Full comparison evidence: `/private/tmp/yutakikuchi-design-qa-comparison.png`
+- Source visual truth: `/var/folders/1t/wt610wqx641d32_rb11smv8c0000gn/T/codex-clipboard-b1d9d2f2-fd04-42bb-8b53-417f294b0d55.png`
+- User-directed differences from source: make the whole page more compact and centered, reduce typography, remove horizontal rules, and make the three work rows non-interactive.
+- Combined focused comparison: `/private/tmp/yutakikuchi-compact-design-comparison.png`
 - Desktop implementation evidence:
-  - Hero: `/private/tmp/yutakikuchi-portfolio-desktop-top-v3.png`
-  - Selected Work: `/private/tmp/yutakikuchi-portfolio-desktop-work-v3.png`
-  - Career and footer: `/private/tmp/yutakikuchi-portfolio-desktop-career-v3.png`
+  - Hero: `/private/tmp/yutakikuchi-compact-desktop-top.png`
+  - Work and career transition: `/private/tmp/yutakikuchi-compact-desktop-work.png`
 - Mobile implementation evidence:
-  - Hero: `/private/tmp/yutakikuchi-portfolio-mobile-top-final.png`
-  - Selected Work: `/private/tmp/yutakikuchi-portfolio-mobile-work-v2.png`
-  - Career: `/private/tmp/yutakikuchi-portfolio-mobile-career-v2.png`
-  - Footer: `/private/tmp/yutakikuchi-portfolio-mobile-footer-final.png`
+  - Hero: `/private/tmp/yutakikuchi-compact-mobile-top.png`
+  - Work: `/private/tmp/yutakikuchi-compact-mobile-work.png`
+  - Career and footer: `/private/tmp/yutakikuchi-compact-mobile-career.png`
 - Viewports: desktop `1440 x 1024`; mobile `390 x 844`
-- State: light theme, unauthenticated public landing page, default/anchor-linked sections
+- State: light theme, public single-page profile, default and anchor-linked sections
 
 ## Findings
 
 No actionable P0, P1, or P2 findings remain.
 
-- Fonts and typography: Noto Sans JP and Barlow Condensed reproduce the source's Japanese editorial hierarchy and condensed numerical treatment. The mobile hero was reduced to `2.35rem` so the prescribed phrases no longer split awkwardly.
-- Spacing and layout rhythm: the header, asymmetric hero, dark work band, light career band, full-width rules, and footer follow the selected composition. The smaller square portrait is an intentional user-requested change and keeps the copy dominant.
-- Colors and visual tokens: deep forest green, warm off-white, subdued rules, and bright green accents match the source direction with sufficient contrast.
-- Image quality and asset fidelity: the implementation uses the existing profile illustration as a local `460 x 460` raster asset. It renders at `280 x 280` on desktop and `220 x 220` on mobile without distortion. Icons come from the Iconify/Simple Icons libraries rather than custom-drawn substitutes.
-- Copy and content: career facts match the existing company profile. The current service name `エアトレ` replaces the older `Do` wording in the visual reference intentionally.
-- Responsiveness and accessibility: desktop and mobile have no horizontal overflow or clipped controls. Semantic landmarks, skip navigation, visible focus states, reduced-motion handling, descriptive alt text, and practical mobile link sizes are present.
-- Interaction and browser health: the Work navigation link updated the URL to `#work`; all internal anchors and external destinations were present; every image loaded; browser console warnings/errors were empty.
+- Fonts and typography: Noto Sans JP remains the primary typeface, with Barlow Condensed for kickers, periods, and indices. Hero, section, work-item, body, header, and footer sizes were reduced while maintaining a readable hierarchy. Mobile work headings wrap without clipping.
+- Spacing and layout rhythm: content is centered inside a `960px` content column, with shorter section padding, a `200px` desktop portrait, and tighter work/career rows. The desktop document width equals the viewport and the mobile page has no overflow offenders.
+- Colors and visual tokens: the established forest green, warm off-white, and green accent palette is preserved. Decorative gradients and ruled backgrounds were removed as requested.
+- Image quality and asset fidelity: the existing `460 x 460` profile illustration remains undistorted and renders at `200 x 200` on desktop and `180 x 180` on mobile. Footer icons remain sharp local SVG assets.
+- Copy and content: all profile, work, and career content is preserved. The three work rows are semantic `article` elements with no `href` and no arrow imagery.
+- Icons and affordances: arrows were removed from the non-interactive work rows so there is no false link affordance. Remaining icons appear only on actual footer links.
+- Responsiveness and accessibility: desktop and mobile captures show no clipping or overlap. The page retains semantic landmarks, a skip link, visible focus states, descriptive image alt text, and reduced-motion support.
+- Interaction and browser health: the Career navigation link updated the URL to `#career`; all images loaded successfully; console warnings and errors were empty.
 
 ## Comparison History
 
-### Iteration 1 — blocked
+### Iteration 1 — passed
 
-- [P1] The portrait rendered `280 x 460` because its HTML height attribute overrode the intended square CSS presentation.
-- [P2] The hero kicker underline stretched across the full label instead of using the short source accent.
-- [P2] The mobile headline and `プロダクト開発` phrase wrapped awkwardly at `390px`.
-
-Fixes made:
-
-- Added `height: auto` to preserve the portrait's square aspect ratio.
-- Replaced the full-width label border with an `80 x 4` accent rule.
-- Reduced the mobile headline to `2.35rem` and kept `プロダクト開発` together.
-
-### Iteration 2 — passed
-
-- Desktop portrait measured `280 x 280`; mobile portrait measured `220 x 220`.
-- Desktop and mobile document width matched their viewports with no overflow offenders.
-- Final screenshots show stable typography, section hierarchy, imagery, and footer layout.
-- Console warnings/errors remained empty.
+- The combined comparison shows the requested density change: the implementation uses a narrower centered column, smaller indices and copy, and substantially shorter rows.
+- Horizontal dividers, the diagonal decorative background, and arrow affordances visible in the source are absent by explicit user request.
+- Work-row DOM inspection confirmed three `ARTICLE` elements, zero work-row links, and zero work-arrow elements at both desktop and mobile widths.
+- Desktop and mobile section scans found zero wide horizontal borders inside the work section.
 
 ## Focused Region Comparison
 
-Focused comparisons were included for the hero and portrait, Selected Work rows and arrow icons, and career/footer typography inside `/private/tmp/yutakikuchi-design-qa-comparison.png`. These regions were needed because the full-page browser capture could not reliably represent the long page in one image; section screenshots were captured at the same desktop viewport and combined with the corresponding source regions.
-
-## Follow-up Polish
-
-- [P3] The source timeline uses circular milestones; the implementation uses a continuous green rule for a quieter responsive treatment.
+`/private/tmp/yutakikuchi-compact-design-comparison.png` places the user-marked source work region and the implementation work region in one image. A focused comparison was necessary because the request specifically targets row density, dividers, arrows, and link affordance. The in-app browser's long full-page capture enlarged and clipped content, so reliable same-viewport section captures were used for the remaining full-page checks.
 
 ## Implementation Checklist
 
-- [x] Preserve selected visual hierarchy and palette.
-- [x] Use the existing profile illustration at the requested smaller scale.
-- [x] Add factual work and career content.
-- [x] Make navigation and outbound links functional.
-- [x] Verify desktop and mobile layouts, assets, console, and overflow.
+- [x] Reduce the page content width and center it.
+- [x] Reduce hero, section, row, body, header, and footer typography.
+- [x] Remove decorative horizontal rules and ruled backgrounds.
+- [x] Convert all three work rows from links to static articles.
+- [x] Remove work-row arrow icons and hover affordances.
+- [x] Verify desktop and mobile layouts, navigation, assets, console, and overflow.
+
+## Follow-up Polish
+
+No P3 polish items are required for this pass.
 
 final result: passed

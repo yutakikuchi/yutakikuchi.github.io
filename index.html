@@ -56,8 +56,8 @@
       --on-dark: #f7f5ef;
       --on-dark-muted: #c3cec8;
       --focus: #1677ff;
-      --max-width: 1180px;
-      --page-padding: clamp(24px, 5vw, 72px);
+      --max-width: 960px;
+      --page-padding: clamp(20px, 4vw, 44px);
       font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
@@ -113,7 +113,6 @@
     .site-header {
       position: relative;
       z-index: 20;
-      border-bottom: 1px solid var(--dark-line);
       color: var(--on-dark);
       background: var(--ink);
     }
@@ -121,10 +120,10 @@
     .header-inner {
       display: flex;
       width: min(100%, calc(var(--max-width) + (var(--page-padding) * 2)));
-      min-height: 72px;
+      min-height: 60px;
       margin: 0 auto;
       align-items: center;
-      gap: clamp(20px, 4vw, 56px);
+      gap: clamp(18px, 3vw, 36px);
       padding: 0 var(--page-padding);
     }
 
@@ -137,14 +136,14 @@
     }
 
     .brand strong {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 800;
       letter-spacing: -0.04em;
     }
 
     .brand span {
       color: var(--accent);
-      font-size: 0.72rem;
+      font-size: 0.66rem;
       font-weight: 700;
     }
 
@@ -152,43 +151,29 @@
       display: flex;
       margin-left: auto;
       align-items: center;
-      gap: clamp(22px, 3vw, 40px);
-      font-size: 0.78rem;
+      gap: clamp(18px, 2.5vw, 30px);
+      font-size: 0.72rem;
       font-weight: 600;
     }
 
     .site-nav a,
     .header-github {
-      position: relative;
       text-decoration: none;
+      transition: color 160ms ease;
     }
 
-    .site-nav a::after,
-    .header-github::after {
-      position: absolute;
-      right: 0;
-      bottom: -9px;
-      left: 0;
-      height: 2px;
-      background: var(--accent);
-      content: "";
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 160ms ease;
-    }
-
-    .site-nav a:hover::after,
-    .site-nav a:focus-visible::after,
-    .header-github:hover::after,
-    .header-github:focus-visible::after {
-      transform: scaleX(1);
+    .site-nav a:hover,
+    .site-nav a:focus-visible,
+    .header-github:hover,
+    .header-github:focus-visible {
+      color: var(--accent);
     }
 
     .header-github {
       flex: 0 0 auto;
-      padding-left: clamp(20px, 3vw, 36px);
+      padding-left: clamp(16px, 2.5vw, 28px);
       border-left: 1px solid var(--dark-line);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 600;
     }
 
@@ -199,39 +184,28 @@
     }
 
     .hero {
-      background:
-        linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0 / 100% 25%,
-        var(--paper);
+      background: var(--paper);
     }
 
     .hero-inner {
       display: grid;
-      min-height: 650px;
-      grid-template-columns: minmax(0, 1fr) 280px;
+      min-height: 520px;
+      grid-template-columns: minmax(0, 1fr) 200px;
       align-items: center;
-      gap: clamp(54px, 9vw, 130px);
-      padding-block: clamp(72px, 9vw, 132px);
+      gap: clamp(40px, 7vw, 76px);
+      padding-block: clamp(56px, 7vw, 84px);
     }
 
     .section-kicker {
       width: fit-content;
-      margin: 0 0 36px;
+      margin: 0 0 24px;
       color: var(--accent-deep);
       font-family: "Barlow Condensed", "Noto Sans JP", sans-serif;
-      font-size: 0.94rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.17em;
       line-height: 1;
       text-transform: uppercase;
-    }
-
-    .section-kicker::after {
-      display: block;
-      width: 80px;
-      height: 4px;
-      margin-top: 11px;
-      background: var(--accent);
-      content: "";
     }
 
     h1,
@@ -242,33 +216,24 @@
     }
 
     .hero h1 {
-      max-width: 780px;
+      max-width: 660px;
       margin: 0;
-      font-size: clamp(3.25rem, 5.4vw, 5.1rem);
+      font-size: clamp(2.5rem, 3.8vw, 3.6rem);
       font-weight: 800;
       letter-spacing: -0.055em;
       line-height: 1.16;
     }
 
     .profile-identity {
-      margin-top: 42px;
-    }
-
-    .profile-identity::before {
-      display: block;
-      width: 48px;
-      height: 1px;
-      margin-bottom: 24px;
-      background: var(--text);
-      content: "";
+      margin-top: 30px;
     }
 
     .profile-name {
       display: flex;
       margin: 0;
       align-items: baseline;
-      gap: 16px;
-      font-size: clamp(1.65rem, 2.3vw, 2.2rem);
+      gap: 12px;
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.25;
@@ -281,20 +246,20 @@
     }
 
     .profile-role {
-      margin: 8px 0 0;
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 0.86rem;
       font-weight: 500;
       line-height: 1.5;
     }
 
     .profile-summary {
       max-width: 640px;
-      margin: 28px 0 0;
+      margin: 20px 0 0;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 0.88rem;
       font-weight: 500;
-      line-height: 2;
+      line-height: 1.85;
     }
 
     .nowrap {
@@ -302,7 +267,7 @@
     }
 
     .portrait {
-      width: 100%;
+      width: 200px;
       margin: 0;
       justify-self: end;
     }
@@ -319,14 +284,12 @@
 
     .work {
       color: var(--on-dark);
-      background:
-        linear-gradient(110deg, transparent 0 74%, rgb(88 183 106 / 3%) 74% 100%),
-        var(--ink);
+      background: var(--ink);
     }
 
     .work-inner,
     .career-inner {
-      padding-block: clamp(72px, 8vw, 108px);
+      padding-block: clamp(52px, 6vw, 72px);
     }
 
     .work .section-kicker {
@@ -334,38 +297,32 @@
     }
 
     .section-heading {
-      margin: -18px 0 42px;
-      font-size: clamp(2rem, 3vw, 2.75rem);
+      margin: 0 0 28px;
+      font-size: clamp(1.7rem, 2.5vw, 2.15rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.25;
     }
 
     .work-list {
-      border-top: 1px solid var(--dark-line);
+      display: grid;
+      gap: 6px;
     }
 
     .work-item {
       display: grid;
-      min-height: 152px;
-      grid-template-columns: 128px minmax(0, 1fr) 36px;
+      min-height: 0;
+      grid-template-columns: 76px minmax(0, 1fr);
       align-items: center;
-      gap: 24px;
-      border-bottom: 1px solid var(--dark-line);
+      gap: 22px;
+      padding: 22px 0;
       color: inherit;
-      text-decoration: none;
-      transition: background-color 160ms ease;
-    }
-
-    .work-item:hover,
-    .work-item:focus-visible {
-      background: rgb(88 183 106 / 6%);
     }
 
     .work-index {
       color: var(--accent);
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(4.5rem, 7vw, 6.7rem);
+      font-size: clamp(3.25rem, 5vw, 4.5rem);
       font-weight: 500;
       letter-spacing: -0.04em;
       line-height: 1;
@@ -373,55 +330,41 @@
 
     .work-copy h3 {
       margin: 0;
-      font-size: clamp(1.15rem, 2vw, 1.7rem);
+      font-size: clamp(1rem, 1.6vw, 1.28rem);
       font-weight: 700;
       letter-spacing: -0.025em;
       line-height: 1.45;
     }
 
     .work-copy p {
-      margin: 10px 0 0;
+      margin: 7px 0 0;
       color: var(--on-dark-muted);
-      font-size: 0.9rem;
-      line-height: 1.75;
-    }
-
-    .work-arrow {
-      width: 34px;
-      height: 34px;
-      transition: transform 160ms ease;
-    }
-
-    .work-item:hover .work-arrow,
-    .work-item:focus-visible .work-arrow {
-      transform: translate(3px, -3px);
+      font-size: 0.8rem;
+      line-height: 1.7;
     }
 
     .career {
-      background:
-        linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0 / 100% 33.333%,
-        var(--paper);
+      background: var(--paper);
     }
 
     .career-list {
-      border-top: 1px solid var(--paper-line);
+      display: grid;
+      gap: 8px;
     }
 
     .career-row {
       display: grid;
-      min-height: 126px;
-      grid-template-columns: 250px minmax(0, 1fr);
+      min-height: 0;
+      grid-template-columns: 190px minmax(0, 1fr);
       align-items: center;
-      gap: clamp(28px, 7vw, 96px);
-      padding: 26px 0 26px 22px;
-      border-bottom: 1px solid var(--paper-line);
-      border-left: 4px solid var(--accent);
+      gap: clamp(24px, 5vw, 56px);
+      padding: 20px 0;
     }
 
     .career-period {
       margin: 0;
       font-family: "Barlow Condensed", "Noto Sans JP", sans-serif;
-      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
       font-weight: 600;
       letter-spacing: 0.01em;
       line-height: 1.2;
@@ -429,17 +372,17 @@
 
     .career-copy h3 {
       margin: 0;
-      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.5;
     }
 
     .career-copy p {
-      margin: 9px 0 0;
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.75;
+      font-size: 0.8rem;
+      line-height: 1.7;
     }
 
     .site-footer {
@@ -449,17 +392,17 @@
 
     .footer-inner {
       display: flex;
-      min-height: 112px;
+      min-height: 84px;
       align-items: center;
       justify-content: space-between;
       gap: 36px;
-      padding-block: 22px;
+      padding-block: 18px;
     }
 
     .copyright {
       margin: 0;
       color: var(--on-dark-muted);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       line-height: 1.5;
     }
 
@@ -471,13 +414,13 @@
 
     .social-link {
       display: inline-flex;
-      min-height: 46px;
+      min-height: 40px;
       align-items: center;
       gap: 10px;
-      padding: 8px clamp(16px, 2.6vw, 30px);
+      padding: 7px clamp(14px, 2vw, 22px);
       border-left: 1px solid var(--dark-line);
       color: var(--on-dark);
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       font-weight: 500;
       text-decoration: none;
       transition: color 160ms ease, background-color 160ms ease;
@@ -505,16 +448,16 @@
 
     @media (max-width: 900px) {
       .hero-inner {
-        grid-template-columns: minmax(0, 1fr) 224px;
-        gap: 48px;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 40px;
       }
 
       .work-item {
-        grid-template-columns: 100px minmax(0, 1fr) 32px;
+        grid-template-columns: 64px minmax(0, 1fr);
       }
 
       .career-row {
-        grid-template-columns: 210px minmax(0, 1fr);
+        grid-template-columns: 170px minmax(0, 1fr);
       }
 
       .footer-inner {
@@ -529,7 +472,7 @@
       }
 
       .header-inner {
-        min-height: 112px;
+        min-height: 96px;
         flex-wrap: wrap;
         align-content: center;
         row-gap: 12px;
@@ -550,32 +493,29 @@
       .hero-inner {
         min-height: auto;
         grid-template-columns: 1fr;
-        gap: 46px;
+        gap: 32px;
       }
 
       .portrait {
-        width: min(58vw, 220px);
+        width: min(52vw, 180px);
         justify-self: start;
       }
 
       .work-item {
-        min-height: 138px;
-        grid-template-columns: 68px minmax(0, 1fr) 28px;
-        gap: 16px;
+        min-height: 0;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 14px;
+        padding: 18px 0;
       }
 
       .work-index {
-        font-size: 4.1rem;
-      }
-
-      .work-arrow {
-        width: 28px;
-        height: 28px;
+        font-size: 3rem;
       }
 
       .career-row {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 8px;
+        padding: 16px 0;
       }
 
       .social-links {
@@ -586,7 +526,6 @@
       .social-link {
         min-width: 50%;
         justify-content: flex-start;
-        border-bottom: 1px solid var(--dark-line);
       }
     }
 
@@ -600,7 +539,7 @@
       }
 
       .hero h1 {
-        font-size: 2.35rem;
+        font-size: 2.15rem;
       }
 
       .profile-name {
@@ -614,12 +553,12 @@
       }
 
       .work-item {
-        grid-template-columns: 52px minmax(0, 1fr) 24px;
-        gap: 12px;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 10px;
       }
 
       .work-index {
-        font-size: 3.25rem;
+        font-size: 2.6rem;
       }
 
       .work-copy p {
@@ -738,47 +677,29 @@
         <h2 class="section-heading" id="work-heading">取り組み</h2>
 
         <div class="work-list">
-          <a
-            class="work-item"
-            href="https://corp.doando.club/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <article class="work-item">
             <span class="work-index" aria-hidden="true">01</span>
-            <span class="work-copy">
+            <div class="work-copy">
               <h3>エアトレ — AIパーソナルトレーナー / 健康行動の継続</h3>
               <p>AIを活用したパーソナルトレーナー「エアトレ」の企画・開発・運営。</p>
-            </span>
-            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
-          </a>
+            </div>
+          </article>
 
-          <a
-            class="work-item"
-            href="https://jp.linkedin.com/in/%E4%BD%91%E5%A4%AA-%E8%8F%8A%E6%B1%A0-36291a44"
-            target="_blank"
-            rel="me noopener noreferrer"
-          >
+          <article class="work-item">
             <span class="work-index" aria-hidden="true">02</span>
-            <span class="work-copy">
+            <div class="work-copy">
               <h3>AI Product — プロダクト企画と組織づくり</h3>
               <p>AIプロダクトの企画・開発と、プロダクト組織の立ち上げ・運営。</p>
-            </span>
-            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
-          </a>
+            </div>
+          </article>
 
-          <a
-            class="work-item"
-            href="https://github.com/yutakikuchi"
-            target="_blank"
-            rel="me noopener noreferrer"
-          >
+          <article class="work-item">
             <span class="work-index" aria-hidden="true">03</span>
-            <span class="work-copy">
+            <div class="work-copy">
               <h3>Data Platform — 広告・ユーザー行動データ基盤</h3>
               <p>広告プロダクトとユーザー行動データ解析基盤の設計・開発。</p>
-            </span>
-            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
-          </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
