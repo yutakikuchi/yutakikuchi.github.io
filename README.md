@@ -1,10 +1,10 @@
 # yutakikuchi.github.io
 
-菊池佑太 / Yuta Kikuchi のGitHubプロフィール案内ページです。
+菊池佑太 / Yuta Kikuchi の個人ポートフォリオサイトです。
 
 ## Pages
 
-- `/`: プロフィール案内ページ
+- `/`: プロフィール、取り組み、経歴、外部リンク
 
 ## Local preview
 
