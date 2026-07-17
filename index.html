@@ -3,56 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>菊池佑太 / Yuta Kikuchi | GitHub Profile</title>
+  <title>菊池佑太 / Yuta Kikuchi | Founder &amp; Product Builder</title>
   <meta
     name="description"
-    content="菊池佑太（Yuta Kikuchi）のGitHubプロフィール案内ページ。公開リポジトリと開発活動はGitHubでご覧いただけます。"
+    content="菊池佑太（Yuta Kikuchi）のプロフィール。Do&amp;Do.株式会社代表として、AIパーソナルトレーナー、健康DX、AIプロダクト開発に取り組んでいます。"
   >
   <meta name="robots" content="index, follow">
   <meta name="author" content="菊池佑太 / Yuta Kikuchi">
-  <meta name="theme-color" content="#f4f7f5" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0d1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0a211a">
 
   <link rel="canonical" href="https://yutakikuchi.github.io/">
-  <link rel="preconnect" href="https://avatars.githubusercontent.com">
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/541903?v=4">
+  <link rel="icon" href="assets/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&amp;family=Noto+Sans+JP:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="菊池佑太 / Yuta Kikuchi | GitHub Profile">
+  <meta property="og:title" content="菊池佑太 / Yuta Kikuchi | Founder &amp; Product Builder">
   <meta
     property="og:description"
-    content="公開リポジトリと開発活動をGitHubプロフィールでご覧いただけます。"
+    content="AIパーソナルトレーナー、健康DX、AIプロダクト開発に取り組む菊池佑太のプロフィール。"
   >
   <meta property="og:url" content="https://yutakikuchi.github.io/">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/541903?v=4">
-  <meta property="og:image:alt" content="菊池佑太のプロフィール写真">
+  <meta property="og:image" content="https://yutakikuchi.github.io/assets/profile.jpg">
+  <meta property="og:image:alt" content="菊池佑太のプロフィールイラスト">
   <meta property="og:locale" content="ja_JP">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="菊池佑太 / Yuta Kikuchi | GitHub Profile">
+  <meta name="twitter:title" content="菊池佑太 / Yuta Kikuchi | Founder &amp; Product Builder">
   <meta
     name="twitter:description"
-    content="公開リポジトリと開発活動をGitHubプロフィールでご覧いただけます。"
+    content="AIパーソナルトレーナー、健康DX、AIプロダクト開発に取り組む菊池佑太のプロフィール。"
   >
-  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/541903?v=4">
+  <meta name="twitter:image" content="https://yutakikuchi.github.io/assets/profile.jpg">
 
   <style>
     :root {
-      color-scheme: light dark;
-      --canvas: #f4f7f5;
-      --surface: #fbfdfc;
-      --text: #17231b;
-      --muted: #56645b;
-      --line: #cfd8d2;
-      --accent: #1d6f42;
-      --accent-strong: #165834;
-      --accent-soft: #dcebe1;
-      --button-text: #f7fbf8;
-      --focus: #0969da;
-      --shadow: rgb(37 74 50 / 16%);
-      --radius: 18px;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+      color-scheme: light;
+      --ink: #0a211a;
+      --ink-soft: #102c23;
+      --paper: #f5f2eb;
+      --paper-bright: #fbf9f4;
+      --text: #0d271f;
+      --muted: #53615b;
+      --paper-line: #c7c6bd;
+      --dark-line: #38574b;
+      --accent: #58b76a;
+      --accent-deep: #368348;
+      --on-dark: #f7f5ef;
+      --on-dark-muted: #c3cec8;
+      --focus: #1677ff;
+      --max-width: 1180px;
+      --page-padding: clamp(24px, 5vw, 72px);
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
     }
@@ -62,7 +68,10 @@
     }
 
     html {
-      background: var(--canvas);
+      min-width: 320px;
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+      background: var(--ink);
     }
 
     body {
@@ -70,9 +79,7 @@
       min-height: 100dvh;
       margin: 0;
       color: var(--text);
-      background:
-        linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 100% 25%,
-        var(--canvas);
+      background: var(--paper);
     }
 
     img {
@@ -88,237 +95,535 @@
       position: fixed;
       top: 12px;
       left: 12px;
-      z-index: 2;
-      padding: 10px 14px;
-      border-radius: var(--radius);
-      color: var(--button-text);
-      background: var(--accent-strong);
-      transform: translateY(-160%);
+      z-index: 100;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform 160ms ease;
     }
 
     .skip-link:focus {
       transform: translateY(0);
     }
 
-    main {
-      display: grid;
-      min-height: calc(100dvh - 72px);
-      place-items: center;
-      padding: clamp(32px, 7vw, 88px) clamp(20px, 6vw, 72px);
-    }
-
-    .profile {
-      display: grid;
-      width: min(100%, 1120px);
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-      align-items: center;
-      gap: clamp(52px, 9vw, 112px);
-    }
-
-    .profile-copy {
+    .site-header {
       position: relative;
-      z-index: 1;
+      z-index: 20;
+      border-bottom: 1px solid var(--dark-line);
+      color: var(--on-dark);
+      background: var(--ink);
     }
 
-    .profile-label {
-      width: fit-content;
-      margin: 0 0 24px;
-      padding-bottom: 8px;
-      border-bottom: 3px solid var(--accent);
-      color: var(--accent-strong);
+    .header-inner {
+      display: flex;
+      width: min(100%, calc(var(--max-width) + (var(--page-padding) * 2)));
+      min-height: 72px;
+      margin: 0 auto;
+      align-items: center;
+      gap: clamp(20px, 4vw, 56px);
+      padding: 0 var(--page-padding);
+    }
+
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: baseline;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand strong {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand span {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .site-nav {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      gap: clamp(22px, 3vw, 40px);
       font-size: 0.78rem;
-      font-weight: 760;
-      letter-spacing: 0.16em;
-      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .site-nav a,
+    .header-github {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .site-nav a::after,
+    .header-github::after {
+      position: absolute;
+      right: 0;
+      bottom: -9px;
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 160ms ease;
+    }
+
+    .site-nav a:hover::after,
+    .site-nav a:focus-visible::after,
+    .header-github:hover::after,
+    .header-github:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .header-github {
+      flex: 0 0 auto;
+      padding-left: clamp(20px, 3vw, 36px);
+      border-left: 1px solid var(--dark-line);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .section-inner {
+      width: min(100%, calc(var(--max-width) + (var(--page-padding) * 2)));
+      margin: 0 auto;
+      padding-inline: var(--page-padding);
+    }
+
+    .hero {
+      background:
+        linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0 / 100% 25%,
+        var(--paper);
+    }
+
+    .hero-inner {
+      display: grid;
+      min-height: 650px;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      align-items: center;
+      gap: clamp(54px, 9vw, 130px);
+      padding-block: clamp(72px, 9vw, 132px);
+    }
+
+    .section-kicker {
+      width: fit-content;
+      margin: 0 0 36px;
+      color: var(--accent-deep);
+      font-family: "Barlow Condensed", "Noto Sans JP", sans-serif;
+      font-size: 0.94rem;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      line-height: 1;
       text-transform: uppercase;
     }
 
-    h1 {
-      max-width: 760px;
-      margin: 0;
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      font-weight: 780;
-      letter-spacing: -0.065em;
-      line-height: 0.94;
-    }
-
-    h1 span {
+    .section-kicker::after {
       display: block;
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.48em;
-      font-weight: 610;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-    }
-
-    .profile-description {
-      max-width: 34rem;
-      margin: 32px 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.6vw, 1.18rem);
-      line-height: 1.85;
-    }
-
-    .profile-link {
-      display: inline-flex;
-      min-height: 52px;
-      margin-top: 36px;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border: 2px solid var(--accent-strong);
-      border-radius: var(--radius);
-      color: var(--button-text);
-      background: var(--accent-strong);
-      box-shadow: 0 14px 30px var(--shadow);
-      font-size: 0.96rem;
-      font-weight: 720;
-      line-height: 1.25;
-      text-decoration: none;
-      white-space: nowrap;
-      transition:
-        background-color 180ms ease,
-        border-color 180ms ease,
-        box-shadow 180ms ease,
-        transform 180ms ease;
-    }
-
-    .profile-link:hover {
-      border-color: var(--accent);
+      width: 80px;
+      height: 4px;
+      margin-top: 11px;
       background: var(--accent);
-      box-shadow: 0 18px 36px var(--shadow);
-      transform: translateY(-2px);
+      content: "";
     }
 
-    .profile-link:active {
-      box-shadow: 0 8px 18px var(--shadow);
-      transform: translateY(1px);
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: anywhere;
     }
 
-    .profile-link:focus-visible,
-    .skip-link:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 4px;
+    .hero h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(3.25rem, 5.4vw, 5.1rem);
+      font-weight: 800;
+      letter-spacing: -0.055em;
+      line-height: 1.16;
+    }
+
+    .profile-identity {
+      margin-top: 42px;
+    }
+
+    .profile-identity::before {
+      display: block;
+      width: 48px;
+      height: 1px;
+      margin-bottom: 24px;
+      background: var(--text);
+      content: "";
+    }
+
+    .profile-name {
+      display: flex;
+      margin: 0;
+      align-items: baseline;
+      gap: 16px;
+      font-size: clamp(1.65rem, 2.3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.25;
+    }
+
+    .profile-name span {
+      font-size: 0.48em;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .profile-role {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .profile-summary {
+      max-width: 640px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 2;
+    }
+
+    .nowrap {
+      white-space: nowrap;
     }
 
     .portrait {
-      position: relative;
-      width: min(100%, 440px);
-      margin: 0 0 0 auto;
-      isolation: isolate;
-    }
-
-    .portrait::before {
-      position: absolute;
-      inset: 8% -7% -8% 8%;
-      z-index: -1;
-      border: 1px solid var(--accent);
-      border-radius: var(--radius);
-      background: var(--accent-soft);
-      content: "";
+      width: 100%;
+      margin: 0;
+      justify-self: end;
     }
 
     .portrait img {
       width: 100%;
+      height: auto;
       aspect-ratio: 1;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: 0 26px 54px var(--shadow);
+      border: 1px solid #75807b;
+      border-radius: 18px;
+      background: #e4e5e3;
       object-fit: cover;
     }
 
-    footer {
-      display: flex;
-      min-height: 72px;
+    .work {
+      color: var(--on-dark);
+      background:
+        linear-gradient(110deg, transparent 0 74%, rgb(88 183 106 / 3%) 74% 100%),
+        var(--ink);
+    }
+
+    .work-inner,
+    .career-inner {
+      padding-block: clamp(72px, 8vw, 108px);
+    }
+
+    .work .section-kicker {
+      color: var(--accent);
+    }
+
+    .section-heading {
+      margin: -18px 0 42px;
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.25;
+    }
+
+    .work-list {
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .work-item {
+      display: grid;
+      min-height: 152px;
+      grid-template-columns: 128px minmax(0, 1fr) 36px;
       align-items: center;
-      justify-content: space-between;
       gap: 24px;
-      padding: 18px clamp(20px, 6vw, 72px);
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.78rem;
+      border-bottom: 1px solid var(--dark-line);
+      color: inherit;
+      text-decoration: none;
+      transition: background-color 160ms ease;
+    }
+
+    .work-item:hover,
+    .work-item:focus-visible {
+      background: rgb(88 183 106 / 6%);
+    }
+
+    .work-index {
+      color: var(--accent);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(4.5rem, 7vw, 6.7rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .work-copy h3 {
+      margin: 0;
+      font-size: clamp(1.15rem, 2vw, 1.7rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.45;
+    }
+
+    .work-copy p {
+      margin: 10px 0 0;
+      color: var(--on-dark-muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .work-arrow {
+      width: 34px;
+      height: 34px;
+      transition: transform 160ms ease;
+    }
+
+    .work-item:hover .work-arrow,
+    .work-item:focus-visible .work-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .career {
+      background:
+        linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0 / 100% 33.333%,
+        var(--paper);
+    }
+
+    .career-list {
+      border-top: 1px solid var(--paper-line);
+    }
+
+    .career-row {
+      display: grid;
+      min-height: 126px;
+      grid-template-columns: 250px minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(28px, 7vw, 96px);
+      padding: 26px 0 26px 22px;
+      border-bottom: 1px solid var(--paper-line);
+      border-left: 4px solid var(--accent);
+    }
+
+    .career-period {
+      margin: 0;
+      font-family: "Barlow Condensed", "Noto Sans JP", sans-serif;
+      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .career-copy h3 {
+      margin: 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
       line-height: 1.5;
     }
 
-    footer p {
-      margin: 0;
+    .career-copy p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
     }
 
-    @media (max-width: 820px) {
-      body {
-        background:
-          linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 100% 20%,
-          var(--canvas);
+    .site-footer {
+      color: var(--on-dark);
+      background: var(--ink);
+    }
+
+    .footer-inner {
+      display: flex;
+      min-height: 112px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      padding-block: 22px;
+    }
+
+    .copyright {
+      margin: 0;
+      color: var(--on-dark-muted);
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      gap: 10px;
+      padding: 8px clamp(16px, 2.6vw, 30px);
+      border-left: 1px solid var(--dark-line);
+      color: var(--on-dark);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .social-link:first-child {
+      border-left: 0;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      color: var(--accent);
+      background: rgb(88 183 106 / 6%);
+    }
+
+    .social-link img {
+      width: 20px;
+      height: 20px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr) 224px;
+        gap: 48px;
       }
 
-      main {
+      .work-item {
+        grid-template-columns: 100px minmax(0, 1fr) 32px;
+      }
+
+      .career-row {
+        grid-template-columns: 210px minmax(0, 1fr);
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html {
+        scroll-padding-top: 124px;
+      }
+
+      .header-inner {
+        min-height: 112px;
+        flex-wrap: wrap;
+        align-content: center;
+        row-gap: 12px;
+      }
+
+      .site-nav {
+        width: 100%;
+        order: 2;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .header-github {
+        margin-left: auto;
+        padding-left: 18px;
+      }
+
+      .hero-inner {
         min-height: auto;
-        padding: 52px 24px 76px;
-      }
-
-      .profile {
         grid-template-columns: 1fr;
-        gap: 52px;
-      }
-
-      .profile-copy {
-        order: 0;
+        gap: 46px;
       }
 
       .portrait {
-        order: 1;
-        width: min(84vw, 360px);
-        margin: 0 auto;
+        width: min(58vw, 220px);
+        justify-self: start;
       }
 
-      h1 {
-        font-size: clamp(3rem, 14vw, 5rem);
+      .work-item {
+        min-height: 138px;
+        grid-template-columns: 68px minmax(0, 1fr) 28px;
+        gap: 16px;
       }
 
-      .profile-description {
-        margin-top: 26px;
+      .work-index {
+        font-size: 4.1rem;
       }
 
-      .profile-link {
-        margin-top: 30px;
+      .work-arrow {
+        width: 28px;
+        height: 28px;
+      }
+
+      .career-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .social-links {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .social-link {
+        min-width: 50%;
+        justify-content: flex-start;
+        border-bottom: 1px solid var(--dark-line);
       }
     }
 
-    @media (max-width: 520px) {
-      main {
-        padding-inline: 20px;
+    @media (max-width: 480px) {
+      .brand span {
+        display: none;
       }
 
-      .profile-label {
-        margin-bottom: 20px;
+      .site-nav {
+        font-size: 0.7rem;
       }
 
-      .profile-link {
-        width: 100%;
+      .hero h1 {
+        font-size: 2.35rem;
       }
 
-      footer {
+      .profile-name {
         align-items: flex-start;
         flex-direction: column;
-        gap: 4px;
+        gap: 6px;
       }
-    }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --canvas: #0d1410;
-        --surface: #121b15;
-        --text: #edf5ef;
-        --muted: #a4b2a8;
-        --line: #304036;
-        --accent: #56d364;
-        --accent-strong: #287a46;
-        --accent-soft: #17291d;
-        --button-text: #f4faf5;
-        --focus: #58a6ff;
-        --shadow: rgb(0 0 0 / 38%);
+      .profile-name span {
+        font-size: 0.56em;
+      }
+
+      .work-item {
+        grid-template-columns: 52px minmax(0, 1fr) 24px;
+        gap: 12px;
+      }
+
+      .work-index {
+        font-size: 3.25rem;
+      }
+
+      .work-copy p {
+        font-size: 0.8rem;
       }
     }
 
@@ -339,9 +644,25 @@
       "name": "菊池佑太",
       "alternateName": "Yuta Kikuchi",
       "url": "https://yutakikuchi.github.io/",
-      "image": "https://avatars.githubusercontent.com/u/541903?v=4",
+      "image": "https://yutakikuchi.github.io/assets/profile.jpg",
+      "jobTitle": "代表取締役",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Do&Do.株式会社",
+        "url": "https://corp.doando.club/"
+      },
+      "knowsAbout": [
+        "AIパーソナルトレーナー",
+        "健康DX",
+        "AIプロダクト開発",
+        "プロダクトマネジメント",
+        "データ基盤"
+      ],
       "sameAs": [
-        "https://github.com/yutakikuchi"
+        "https://github.com/yutakikuchi",
+        "https://jp.linkedin.com/in/%E4%BD%91%E5%A4%AA-%E8%8F%8A%E6%B1%A0-36291a44",
+        "https://yut.hatenablog.com/",
+        "https://corp.doando.club/yuta-kikuchi/"
       ]
     }
   </script>
@@ -349,44 +670,196 @@
 <body>
   <a class="skip-link" href="#main-content">本文へ移動</a>
 
-  <main id="main-content">
-    <section class="profile" aria-labelledby="profile-heading">
-      <div class="profile-copy">
-        <p class="profile-label">GitHub profile</p>
-        <h1 id="profile-heading">
-          菊池佑太
-          <span>Yuta Kikuchi</span>
-        </h1>
-        <p class="profile-description">
-          AIパーソナルトレーナー、健康DX、プロダクト開発に取り組んでいます。
-          公開リポジトリと開発活動はGitHubでご覧いただけます。
-        </p>
-        <a
-          class="profile-link"
-          href="https://github.com/yutakikuchi"
-          rel="me"
-          aria-label="菊池佑太のGitHubプロフィールを見る"
-        >
-          GitHubプロフィールを見る
-        </a>
-      </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="ページの先頭へ">
+        <strong>菊池佑太</strong>
+        <span>Yuta Kikuchi</span>
+      </a>
 
-      <figure class="portrait">
-        <img
-          src="https://avatars.githubusercontent.com/u/541903?v=4"
-          width="460"
-          height="460"
-          alt="菊池佑太のプロフィール写真"
-          decoding="async"
-          fetchpriority="high"
-        >
-      </figure>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="#profile">About</a>
+        <a href="#work">Work</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a
+        class="header-github"
+        href="https://github.com/yutakikuchi"
+        target="_blank"
+        rel="me noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="profile-heading">
+      <div class="section-inner hero-inner" id="profile">
+        <div class="hero-copy">
+          <p class="section-kicker">Product Builder Casebook</p>
+          <h1 id="profile-heading">
+            プロダクトで、<br>
+            行動が変わる<br>
+            きっかけをつくる。
+          </h1>
+
+          <div class="profile-identity">
+            <h2 class="profile-name">
+              菊池佑太
+              <span>/ Yuta Kikuchi</span>
+            </h2>
+            <p class="profile-role">Founder / Product Builder</p>
+            <p class="profile-summary">
+              Do&amp;Do.株式会社の代表として、AIパーソナルトレーナー「エアトレ」と
+              健康DXの<span class="nowrap">プロダクト開発</span>に取り組んでいます。
+            </p>
+          </div>
+        </div>
+
+        <figure class="portrait">
+          <img
+            src="assets/profile.jpg"
+            width="460"
+            height="460"
+            alt="菊池佑太のプロフィールイラスト"
+            decoding="async"
+            fetchpriority="high"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-heading">
+      <div class="section-inner work-inner">
+        <p class="section-kicker">Selected Work</p>
+        <h2 class="section-heading" id="work-heading">取り組み</h2>
+
+        <div class="work-list">
+          <a
+            class="work-item"
+            href="https://corp.doando.club/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="work-index" aria-hidden="true">01</span>
+            <span class="work-copy">
+              <h3>エアトレ — AIパーソナルトレーナー / 健康行動の継続</h3>
+              <p>AIを活用したパーソナルトレーナー「エアトレ」の企画・開発・運営。</p>
+            </span>
+            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
+          </a>
+
+          <a
+            class="work-item"
+            href="https://jp.linkedin.com/in/%E4%BD%91%E5%A4%AA-%E8%8F%8A%E6%B1%A0-36291a44"
+            target="_blank"
+            rel="me noopener noreferrer"
+          >
+            <span class="work-index" aria-hidden="true">02</span>
+            <span class="work-copy">
+              <h3>AI Product — プロダクト企画と組織づくり</h3>
+              <p>AIプロダクトの企画・開発と、プロダクト組織の立ち上げ・運営。</p>
+            </span>
+            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
+          </a>
+
+          <a
+            class="work-item"
+            href="https://github.com/yutakikuchi"
+            target="_blank"
+            rel="me noopener noreferrer"
+          >
+            <span class="work-index" aria-hidden="true">03</span>
+            <span class="work-copy">
+              <h3>Data Platform — 広告・ユーザー行動データ基盤</h3>
+              <p>広告プロダクトとユーザー行動データ解析基盤の設計・開発。</p>
+            </span>
+            <img class="work-arrow" src="assets/icons/arrow-up-right.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="career" id="career" aria-labelledby="career-heading">
+      <div class="section-inner career-inner">
+        <p class="section-kicker">Career</p>
+        <h2 class="section-heading" id="career-heading">キャリア</h2>
+
+        <div class="career-list">
+          <article class="career-row">
+            <p class="career-period">2022年8月—現在</p>
+            <div class="career-copy">
+              <h3>Do&amp;Do.株式会社 代表取締役</h3>
+              <p>AIパーソナルトレーナー「エアトレ」の企画・運営。</p>
+            </div>
+          </article>
+
+          <article class="career-row">
+            <p class="career-period">2017—2021</p>
+            <div class="career-copy">
+              <h3>株式会社ABEJA 取締役 / CPO</h3>
+              <p>AIプロダクト開発とプロダクト組織を担当。</p>
+            </div>
+          </article>
+
+          <article class="career-row">
+            <p class="career-period">2007—2017</p>
+            <div class="career-copy">
+              <h3>インターネット広告・データ基盤領域</h3>
+              <p>広告プロダクト開発、ユーザー行動データ解析基盤の開発に従事。</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>菊池佑太 / Yuta Kikuchi</p>
-    <p>GitHub profile directory</p>
+  <footer class="site-footer" id="contact">
+    <div class="section-inner footer-inner">
+      <p class="copyright">© 2026 Yuta Kikuchi</p>
+
+      <nav class="social-links" aria-label="外部リンク">
+        <a
+          class="social-link"
+          href="https://github.com/yutakikuchi"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <img src="assets/icons/github.svg" alt="">
+          GitHub
+        </a>
+        <a
+          class="social-link"
+          href="https://jp.linkedin.com/in/%E4%BD%91%E5%A4%AA-%E8%8F%8A%E6%B1%A0-36291a44"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <img src="assets/icons/linkedin.svg" alt="">
+          LinkedIn
+        </a>
+        <a
+          class="social-link"
+          href="https://yut.hatenablog.com/"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <img src="assets/icons/article.svg" alt="">
+          Blog
+        </a>
+        <a
+          class="social-link"
+          href="https://corp.doando.club/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="assets/icons/buildings.svg" alt="">
+          Do&amp;Do.
+        </a>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>
